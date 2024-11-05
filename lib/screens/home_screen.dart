@@ -128,7 +128,7 @@ class LoginScreen extends StatelessWidget {
                       prefixIcon: Icon(Icons.email, color: Colors.grey),
                     ),
                   ),
-                   SizedBox(height: 10.0),
+                   SizedBox(height: 7.0),
                   // Campo de senha
                   TextField(
                     controller: passwordController,
@@ -146,7 +146,7 @@ class LoginScreen extends StatelessWidget {
                       prefixIcon: Icon(Icons.lock, color: Colors.grey),
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: 7.0),
                   // opção de senha
                   Align(
                     alignment: Alignment.centerRight,
@@ -158,14 +158,14 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: 7.0),
                   // Botão de login
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () => handleLogin(context),
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 16.0),
+                        padding: EdgeInsets.symmetric(vertical: 10.0),
                         backgroundColor: const Color.fromARGB(255, 2, 122, 144), // cor do botão
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12.0),
@@ -177,7 +177,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 7.0),
                   // opção de entrar com o google
                   SizedBox(
                     width: double.infinity,
@@ -201,7 +201,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30.0),
+                  SizedBox(height: 7.0),
                   // Barra inferior com Registro
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
