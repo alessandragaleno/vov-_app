@@ -116,7 +116,7 @@ class _CadastroNomeScreenState extends State<CadastroNomeScreen> {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: Stack(
+            body: Stack(
         children: [
           // Imagem de fundo
           Container(
@@ -169,8 +169,8 @@ class _CadastroNomeScreenState extends State<CadastroNomeScreen> {
                           fontSize: 25, // Tamanho do texto (ajuste conforme necessário)
                           ),
                           textAlign: TextAlign.center,
-                         ),
-                        ),         
+                         ),     
+                        ),                     
             TextField(
               controller: _nomeController, // Controlador do campo de texto
               style: TextStyle(color: Colors.black),
@@ -204,9 +204,8 @@ class _CadastroNomeScreenState extends State<CadastroNomeScreen> {
                         ),
                       ),
                       SizedBox(height: 1.0),
-                    ]
-                        //foi adicionado
-                        else if (_etapaAtual == 1) ...[
+                    ]//foi adicionado
+                      else if (_etapaAtual == 1) ...[
                           //Texto
                       Align(
                         alignment: Alignment.topCenter,
@@ -358,8 +357,9 @@ class _CadastroNomeScreenState extends State<CadastroNomeScreen> {
                 children: [
                   ElevatedButton(
                    onPressed: _proximaEtapa,
-                    child: Text("Sou idoso e possuo cuidador."),
-                  ),
+                    child: Text("Sou idoso e possuo cuidador.",
+                    style: TextStyle(fontSize: 18.0, color: Colors.white),),
+                    ),
                   SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {
@@ -378,18 +378,17 @@ class _CadastroNomeScreenState extends State<CadastroNomeScreen> {
                   ),
                 ],
               ),
-            ],
-
-                    ]
-                      ),
-                  ),
-                ),
-              ),
-            ),
+           ]        
         ]
       )
-    );
-  }
+    ),
+    ),
+    ),
+    ),
+    ]
+    )
+ );   
+}
 }// Próxima tela do cadastro (exemplo)
 class ProximaTela extends StatelessWidget {
   @override

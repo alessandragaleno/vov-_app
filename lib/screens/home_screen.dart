@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cad_nome.dart'; //  chamada do cad_nome 
 
 void main() {
   runApp(MyApp());
@@ -27,13 +28,16 @@ class LoginScreen extends StatelessWidget {
     String password = passwordController.text;
 
     // Validação simples
-    if (email.isEmpty || password.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Por favor, preencha todos os campos.')),
+    if (email == "Teste" && password == "1234") {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => CadastroNomeScreen()),
       );
-      return;
+     } else{//  chamada do cad_nome
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Login ou senha incorretos.')),
+      );
     }
-
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Login feito com sucesso! $email')),
     );
