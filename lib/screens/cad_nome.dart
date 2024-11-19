@@ -352,32 +352,59 @@ class _CadastroNomeScreenState extends State<CadastroNomeScreen> {
                         else if (_etapaAtual == 4) ...[
               Text("por favor selecione a opção que melhor descreve você:"),
               SizedBox(height: 16),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ElevatedButton(
-                   onPressed: _proximaEtapa,
-                    child: Text("Sou idoso e possuo cuidador.",
-                    style: TextStyle(fontSize: 18.0, color: Colors.white),),
-                    ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _etapaAtual = 0; // Reinicia o fluxo de cadastro
-                      });
-                    },
-                    child: Text("Sou idoso."),
-                  ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context); // Volta para a tela anterior
-                    },
-                    child: Text("Sou cuidador"),
-                  ),
-                ],
-              ),
+              SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: _proximaEtapa,
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(vertical: 10.0),
+                            backgroundColor: const Color.fromARGB(255, 2, 122, 14), // Cor do botão
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                          child: Text(
+                            'Sou idoso e tenho cuidador',
+                            style: TextStyle(fontSize: 18.0, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+              SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: _proximaEtapa,
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(vertical: 10.0),
+                            backgroundColor: const Color.fromARGB(255, 2, 122, 14), // Cor do botão
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                          child: Text(
+                            'Sou idoso',
+                            style: TextStyle(fontSize: 18.0, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 16),
+              SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: _proximaEtapa,
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(vertical: 10.0),
+                            backgroundColor: const Color.fromARGB(255, 2, 122, 14), // Cor do botão
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                          child: Text(
+                            'Sou cuidador',
+                            style: TextStyle(fontSize: 18.0, color: Colors.white),
+                          ),
+                        ),
+                      ),
            ]        
         ]
       )
