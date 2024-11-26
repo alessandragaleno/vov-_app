@@ -43,7 +43,8 @@ class _CadastroIdosoCuidScreenState extends State<CadastroIdosoCuidScreen> {
     },
     {
       'question': 'Você possui alguma outra condição crônica ou de saúde que afeta suas atividades diárias?',
-      'options': ['Não possuo', 'Hipertensão arterial', 'Diabetes', 'Insuficiência cardiaca', 'Doença de Parkinson', 'Osteoporose', 'Outra(s) Condição(s)'],
+      'options': ['Não possuo', 'Hipertensão arterial', 'Diabetes', 'Insuficiência cardiaca', 
+      'Doença de Parkinson', 'Osteoporose', 'Outra(s) Condição(s)'],
       'answers': [true, false, false, false, false],
     },
   ];
@@ -142,7 +143,7 @@ class _CadastroIdosoCuidScreenState extends State<CadastroIdosoCuidScreen> {
                       ElevatedButton(
                         onPressed: _antPergunta, // Alterado para chamar _antPergunta
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 10.0),
+                          padding: EdgeInsets.symmetric(vertical: 16.0,  horizontal: 16.0),
                           backgroundColor: const Color.fromARGB(255, 2, 122, 14),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0),
@@ -160,7 +161,7 @@ class _CadastroIdosoCuidScreenState extends State<CadastroIdosoCuidScreen> {
                       ElevatedButton(
                         onPressed: _proximaPergunta, // Alterado para chamar _proximaPergunta
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 10.0),
+                          padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                           backgroundColor: const Color.fromARGB(255, 2, 122, 14),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0),
@@ -174,6 +175,7 @@ class _CadastroIdosoCuidScreenState extends State<CadastroIdosoCuidScreen> {
                           ),
                         ),
                       ),
+                      SizedBox(height: 7.0), // espaço entre botões
                     ],
                   ),
                 ),
