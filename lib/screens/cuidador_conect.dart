@@ -23,28 +23,13 @@ class CadastroIdosoCuidScreen extends StatefulWidget {
 class _CadastroIdosoCuidScreenState extends State<CadastroIdosoCuidScreen> {
   final List<Map<String, dynamic>> questions = [
     {
-      'question': 'Você possue alguma condição que afeta sua visão?',
-      'options': ['Não possuo', 'Catarata', 'Astigmatismo', 'Miopia', 'Outra condição'],
-      'answers': [true, false, false, false, false],
-    },
-    {
-      'question': 'Você possui alguma condição que afeta sua audição?',
+      'question': 'Você possui alguma formação ou experiência em cuidados com idosos?',
       'options': [
         'Não possuo',
-        'sim, Perda auditiva leve',
-        'Surdidade',
-        'sim, perda auditiva moderada',
-        'sim, perda auditiva severa',
-        'sim, surdez total',
-        'sim, uso de aparelho auditivos',
-        'sim, implante coclear'
+        'Sim, possui conhecimento básico',
+        'Sim, possuo conhecimento intermediário',
+        'Sim, possuo conhecimento avançado'
       ],
-      'answers': [true, false, false, false, false],
-    },
-    {
-      'question': 'Você possui alguma outra condição crônica ou de saúde que afeta suas atividades diárias?',
-      'options': ['Não possuo', 'Hipertensão arterial', 'Diabetes', 'Insuficiência cardiaca', 
-      'Doença de Parkinson', 'Osteoporose', 'Outra(s) Condição(s)'],
       'answers': [true, false, false, false, false],
     },
   ];
@@ -137,34 +122,16 @@ class _CadastroIdosoCuidScreenState extends State<CadastroIdosoCuidScreen> {
                               currentQuestion['answers'][idx] = value!; // Alterado
                             });
                           },
-                           activeColor: const Color.fromARGB(255, 2, 122, 14), // Cor verde para o Checkbox selecionado
+                          activeColor: const Color.fromARGB(255, 2, 122, 14), // Cor verde para o Checkbox selecionado
                           checkColor: Colors.white, // Cor do ícone do Checkbox
                         );
                       }).toList(),
-                      SizedBox(height: 20.0),
-                      ElevatedButton(
-                        onPressed: _antPergunta, // Alterado para chamar _antPergunta
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 16.0,  horizontal: 16.0),
-                          backgroundColor: const Color.fromARGB(255, 2, 122, 14),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                        ),
-                        child: Text(
-                          'Anterior',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
                       SizedBox(height: 10.0),
                       ElevatedButton(
                         onPressed: _proximaPergunta, // Alterado para chamar _proximaPergunta
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
-                          backgroundColor: const Color.fromARGB(255, 2, 122, 14),
+                          backgroundColor: const Color.fromARGB(255, 2, 122, 14), // Cor verde do botão
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0),
                           ),

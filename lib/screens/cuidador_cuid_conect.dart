@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Gostaria de conectar agora ao seu cuidador?',
+              'Gostaria de conectar agora ao seu paciente?',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
