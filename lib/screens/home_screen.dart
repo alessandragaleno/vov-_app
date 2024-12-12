@@ -216,6 +216,10 @@ class LoginScreen extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => CadastroNomeScreen()),
+                            );
                           // Navegar para a tela de registro
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text('Navegar para Registro')),
