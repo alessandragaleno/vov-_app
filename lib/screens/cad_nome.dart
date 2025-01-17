@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'idoso.dart';
 
 void main() {
   runApp(MyApp());
@@ -380,6 +381,12 @@ class _CadastroNomeScreenState extends State<CadastroNomeScreen> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0),
                             ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                            MaterialPageRoute(builder: (context) => CadastroIdosoCuidScreen()),
+                              );
+                            },
                           ),
                           child: Text(
                             'Sou idoso',

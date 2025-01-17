@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'cad_nome.dart'; //  chamada do cad_nome 
+import 'idoso_cuid.dart'; //  chamada do idoso_cuid
 
 void main() {
   runApp(MyApp());
