@@ -79,7 +79,9 @@ flutter:
       - lib/assets/images/vagas.png
       - lib/assets/images/consulta.png
       - lib/assets/images/usuario.png
-
+      - lib/assets/images/agenda.png
+      - lib/assets/images/medicacao.png
+      - lib/assets/images/atividade.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
