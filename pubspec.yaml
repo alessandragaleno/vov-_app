@@ -82,6 +82,14 @@ flutter:
       - lib/assets/images/agenda.png
       - lib/assets/images/medicacao.png
       - lib/assets/images/atividade.png
+      - lib/assets/images/musica.jpg
+      - lib/assets/images/exercicio.png
+      - lib/assets/images/aulas_tutoriais.jpg
+      - lib/assets/images/jogos.jpeg
+      - lib/assets/images/aulas_tutoriais.jpg
+     
+     
+      
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
