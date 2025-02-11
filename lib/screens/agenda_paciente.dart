@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(PatientDiaryApp());
+  runApp(MyApp());
 }
 
-class PatientDiaryApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: PatientDiaryScreen(),
+      home: PacienteScreen(),
     );
   }
 }
 
-class PatientDiaryScreen extends StatelessWidget {
+class PacienteScreen extends StatelessWidget {
   final List<TaskItem> tasks = [
     TaskItem('Troca de Fralda', 'lib/assets/images/agenda.png', 'Registre a troca de fraldas do paciente'),
     TaskItem('Lista de Remédios', 'lib/assets/images/medicacao.png', 'Mantenha o controle da medicação do paciente'),

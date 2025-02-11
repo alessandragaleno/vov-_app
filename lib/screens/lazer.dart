@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:idoso_app/main.dart';
 
 void main() {
-  runApp(PatientDiaryApp());
+  runApp(MyApp());
 }
 
-class PatientDiaryApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: PatientDiaryScreen(),
+      
+      home: LazerScreen(),
     );
   }
 }
 
-class PatientDiaryScreen extends StatelessWidget {
+class LazerScreen extends StatelessWidget {
   final List<TaskItem> tasks = [
     TaskItem('Música', 'lib/assets/images/musica.jpg', 'Músicas e danças para descontrair o paciente'),
     TaskItem('Exercicios de Relaxamento', 'lib/assets/images/exercicio.png', 'Manter a saúde fisica do paciente'),

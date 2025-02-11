@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'agenda_paciente.dart';
+import 'calendario.dart';
+import 'lazer.dart';
+import 'compras.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: OptionsScreen(),
+      routes: {
+        '/calendario': (context) => AgendaScreen(),
+        '/agenda_paciente': (context) => PacienteScreen(),
+        '/lazer': (context) => LazerScreen(),
+        '/compras': (context) => MarketplaceScreen(),
+      },
     );
   }
 }
@@ -17,9 +27,10 @@ class MyApp extends StatelessWidget {
 class OptionsScreen extends StatelessWidget {
   final List<OptionItem> options = [
     OptionItem('calendario', 'lib/assets/images/calendario.png'),
-    OptionItem('Meu paciente', 'lib/assets/images/pacinete.png'),
+    OptionItem('Meu paciente', 'lib/assets/images/paciente.png'),
     OptionItem('comunidade', 'lib/assets/images/comunidade.png'),
     OptionItem('Lazer', 'lib/assets/images/lazer.png'),
+    OptionItem('Compras', 'lib/assets/images/compras.png'),
     OptionItem('Dicas', 'lib/assets/images/Dicas.png'),
     OptionItem('Direitos dos Idosos', 'lib/assets/images/direitos.jpeg'),
     OptionItem('Lembretes', 'lib/assets/images/lembretes.png'),
@@ -116,50 +127,84 @@ class OptionsScreen extends StatelessWidget {
                 itemCount: options.length, // Corrigido para usar a quantidade de opções
                 itemBuilder: (context, index) {
                   final option = options[index];
-                  return Container(
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: Offset(0, 3), // Sombra em x e y
-                        ),
-                      ],
-                    ),
-                    padding: EdgeInsets.all(8.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: Colors.grey[200],
+                  return GestureDetector(
+                    onTap: () {
+                      switch (option.title) {
+                        case 'Calendario':
+                          Navigator.pushNamed(context, '/calendario');
+                          break;
+                        case 'Agenda do Paciente':
+                          Navigator.pushNamed(context, '/agenda_paciente');
+                          break;
+                        case 'Lazer':
+                          Navigator.pushNamed(context, '/lazer');
+                          break;
+                        case 'Compras':
+                          Navigator.pushNamed(context, '/compras');
+                          break;
+                        default:
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: Text('Erro'),
+                              content: Text('Página não encontrada para ${option.title}'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('OK'),
+                                ),
+                              ],
+                            ),
+                          );
+                      }
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: Offset(0, 3), // Sombra em x e y
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.asset(
-                              option.imagePath,
-                              fit: BoxFit.cover,
+                        ],
+                      ),
+                      padding: EdgeInsets.all(8.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: Colors.grey[200],
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                option.imagePath,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(width: 15),
-                        Expanded(
-                          child: Text(
-                            option.title,
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                          SizedBox(width: 15),
+                          Expanded(
+                            child: Text(
+                              option.title,
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },
