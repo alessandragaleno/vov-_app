@@ -3,6 +3,8 @@ import 'paciente.dart';
 import 'calendario.dart';
 import 'lazer.dart';
 import 'compras.dart';
+import 'contatos.dart';
+import 'idoso_cuid_med.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
         '/paciente': (context) => PacienteScreen(),
         '/lazer': (context) => LazerScreen(),
         '/compras': (context) => MarketplaceScreen(),
+        '/contatos': (context) => ContactsListScreen(),
+        '/idoso_cuid_med': (context) =>  MedicationScreen(),
       },
     );
   }
@@ -26,17 +30,16 @@ class MyApp extends StatelessWidget {
 
 class OptionsScreen extends StatelessWidget {
   final List<OptionItem> options = [
-    OptionItem('calendario', 'lib/assets/images/calendario.png'),
-    OptionItem('Meu paciente', 'lib/assets/images/paciente.png'),
-    OptionItem('comunidade', 'lib/assets/images/comunidade.png'),
+    OptionItem('Contatos', 'lib/assets/images/telefone.png'),
+    OptionItem('Calendário', 'lib/assets/images/calendario.png'),
+    OptionItem('Remédios', 'lib/assets/images/medicacao.png'),
     OptionItem('Lazer', 'lib/assets/images/lazer.png'),
     OptionItem('Compras', 'lib/assets/images/compras.png'),
-    OptionItem('Dicas', 'lib/assets/images/Dicas.png'),
-    OptionItem('Direitos dos Idosos', 'lib/assets/images/direitos.jpeg'),
     OptionItem('Lembretes', 'lib/assets/images/lembretes.png'),
+    OptionItem('Direitos dos Idosos', 'lib/assets/images/direitos.jpeg'),
     OptionItem('Vagas', 'lib/assets/images/vagas.png'),
     OptionItem('Consulta Médica Online', 'lib/assets/images/consulta.png'),
-    OptionItem('Usuario', 'lib/assets/images/cuidador.png'),
+    OptionItem('Usuario', 'lib/assets/images/idoso_user.png'),
   ];
 
   @override
@@ -52,7 +55,7 @@ class OptionsScreen extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('lib/assets/images/cuidador.png'),
+                  backgroundImage: AssetImage('lib/assets/images/idoso_user.png'),
                 ),
                 SizedBox(width: 10),
                 Expanded(
@@ -130,17 +133,32 @@ class OptionsScreen extends StatelessWidget {
                   return GestureDetector(
                     onTap: () {
                       switch (option.title) {
-                        case 'calendario':
+                        case 'Contatos':
+                          Navigator.pushNamed(context, '/contatos');
+                          break;
+                        case 'Calendário':
                           Navigator.pushNamed(context, '/calendario');
                           break;
-                        case 'Meu paciente':
-                          Navigator.pushNamed(context, '/paciente');
+                        case 'Remédios':
+                          Navigator.pushNamed(context, '/remedios');
                           break;
                         case 'Lazer':
                           Navigator.pushNamed(context, '/lazer');
                           break;
                         case 'Compras':
                           Navigator.pushNamed(context, '/compras');
+                        break;
+                        case 'Lembretes':
+                          Navigator.pushNamed(context, '/lembretes');
+                          break;
+                          case 'Direitos dos idosos':
+                          Navigator.pushNamed(context, '/direitos');
+                          break;
+                        case 'Contrate um Cuidador':
+                          Navigator.pushNamed(context, '/contrate');
+                          break;
+                        case 'Consulta Médica Online':
+                          Navigator.pushNamed(context, '/consulta');
                           break;
                         default:
                           showDialog(
